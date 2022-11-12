@@ -19,7 +19,7 @@ export default function Login() {
   const handleSubmit = (e) => {
     e.preventDefault();
     // TODO => dispatch()
-    dispatch(setUser());
+    dispatch(setUser({ email, password }));
     setEmail("");
     setPassword("");
     navigate("/");
@@ -43,7 +43,7 @@ export default function Login() {
         <Typography component="h1" variant="h5">
           Sign in
         </Typography>
-        <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
+        <Box component="form" onSubmit={handleSubmit} sx={{ mt: 1 }}>
           <TextField
             margin="normal"
             required
